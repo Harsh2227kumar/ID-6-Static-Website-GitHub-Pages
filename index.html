@@ -3,18 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dynamic Calendar</title>
+  <title>Advanced Calendar</title>
   <script defer src="script.js"></script>
 </head>
-<body class="bg-gray-100 flex items-center justify-center min-h-screen">
-  <div class="bg-white rounded-lg shadow-lg p-6 w-full max-w-md">
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-100 flex items-center justify-center min-h-screen transition-all">
+  <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 w-full max-w-md transition-all">
     <div class="flex justify-between items-center mb-4">
-      <button id="prevBtn" class="text-gray-500 hover:text-black">&lt;</button>
+      <button id="prevBtn" class="text-gray-500 dark:text-gray-300 hover:text-black dark:hover:text-white">&lt;</button>
       <h2 id="monthYear" class="text-xl font-bold text-center">Month Year</h2>
-      <button id="nextBtn" class="text-gray-500 hover:text-black">&gt;</button>
+      <button id="nextBtn" class="text-gray-500 dark:text-gray-300 hover:text-black dark:hover:text-white">&gt;</button>
     </div>
 
-    <div class="grid grid-cols-7 text-center font-medium text-gray-600 mb-2">
+    <div class="flex justify-end mb-2">
+      <button id="toggleDark" class="px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded text-sm">
+        Toggle Dark Mode
+      </button>
+    </div>
+
+    <div class="grid grid-cols-7 text-center font-medium text-gray-600 dark:text-gray-400 mb-2">
       <div>Sun</div>
       <div>Mon</div>
       <div>Tue</div>
@@ -24,7 +30,7 @@
       <div>Sat</div>
     </div>
 
-    <div id="calendarDays" class="grid grid-cols-7 text-center text-gray-700 gap-2"></div>
+    <div id="calendarDays" class="grid grid-cols-7 text-center gap-2 text-sm"></div>
   </div>
 </body>
 </html>
