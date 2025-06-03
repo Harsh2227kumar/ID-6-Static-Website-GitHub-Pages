@@ -15,11 +15,18 @@ const monthNames = [
 ];
 
 // Simulated holiday API
-const holidays = {
-  "2025-06-20": "World Refugee Day",
-  "2025-07-04": "Independence Day",
-  "2025-12-25": "Christmas"
-};
+const holidays = {};
+
+fetch("holidays.json")
+  .then(res => res.json())
+  .then(data => {
+    holidays = data;
+    renderCalendar(currentMonth, currentYear);
+  })
+  .catch(err => {
+    console.error("Could not load holidays:", err);
+    renderCalendar(currentMonth, currentYear);
+  });
 
 function pad(n) {
   return n < 10 ? `0${n}` : n;
